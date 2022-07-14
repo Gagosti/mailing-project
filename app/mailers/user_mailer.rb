@@ -5,9 +5,10 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
   #
-  def welcome
-    @greeting = "Hi"
+  def welcome(user)
+    @user = user
 
-    mail to: "to@example.org"
+    # email no qual iremos mandar
+    mail( to: user.email, subject: 'Welcome user!')
   end
 end
